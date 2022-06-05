@@ -105,6 +105,9 @@ alias ls="exa --icons"
 alias ll="exa -l -g --icons"
 alias lt="exa --tree --icons -a -I '.git|__pycache__|.mypy_cache|.ipynb_checkpoints'"
 alias fp="fzf --preview 'batcat --style=numbers --color=always --line-range :500 {}'"
+
+set -o vi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
