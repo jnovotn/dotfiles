@@ -13,6 +13,24 @@ else
 fi
 }
 
+if [[ $OSTYPE == 'darwin'* ]]; then 
+    brew install exa
+    brew install gh
+    brew install zsh
+    chsh -s $(which zsh)
+else 
+    sudo apt install zsh
+    chsh -s $(which zsh)
+    # exa ls 
+    sudo apt install exa
+    # github cli
+    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+    sudo apt update
+    sudo apt install gh
+fi
+sudo apt install tmux 
+
 safe_link ${BASEDIR}/vimrc ~/.vimrc
 #ln -s ${BASEDIR}/vim/ ~/.vim
 
@@ -29,20 +47,8 @@ git clone https://github.com/unixorn/fzf-zsh-plugin.git ${ZSH_PLUGIN_DIR}/fzf-zs
 git clone https://github.com/agkozak/zsh-z.git ${ZSH_PLUGIN_DIR}/zsh-z
 git clone https://github.com/zsh-users/zsh-history-substring-search.git ${ZSH_PLUGIN_DIR}/zsh-history-substring-search
 safe_link ${OMZ} ~/.oh-my-zsh
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sudo sh
 
-if [[ $OSTYPE == 'darwin'* ]]; then 
-    brew install exa
-    brew install gh
-else 
-    # exa ls 
-    apt install exa
-    # github cli
-    curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
-    sudo apt update
-    sudo apt install gh
-fi
 
 # tmux
 #ln -s ${BASEDIR}/.tmux/.tmux.conf ~/.tmux.conf

@@ -121,4 +121,4 @@ nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 
 imap jk <Esc>
 imap jj <Esc>
-
+set number
