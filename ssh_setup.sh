@@ -8,15 +8,16 @@ if [ ! -f  ${SSH_KEY} ]; then
    ssh-keygen -t ed25519 -C "${email}"
    eval "$(ssh-agent -s)"
 fi
+
+if [[ $OSTYPE == 'darwin'* ]]; then
 SSH_CONFIG_FILE=~/.ssh/config
-if [ -f  ${SSH_CONFIG_FILE} ]; then
-    echo "ssh config file already there"
-else
+if [ ! -f  ${SSH_CONFIG_FILE} ]; then
     touch ${SSH_CONFIG_FILE}
     echo "Host *" >> ${SSH_CONFIG_FILE}
     echo "   AddKeysToAgent yes" >> ${SSH_CONFIG_FILE}
     echo "   UseKeychain yes" >> ${SSH_CONFIG_FILE}
     echo "   IdentityFile ~/.ssh/id_ed25519" >> ${SSH_CONFIG_FILE}
+fi
 fi
 
 gh auth login
