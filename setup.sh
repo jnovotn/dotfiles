@@ -34,6 +34,7 @@ sudo apt install tmux
 safe_link ${BASEDIR}/vimrc ~/.vimrc
 #ln -s ${BASEDIR}/vim/ ~/.vim
 
+safe_link ${BASEDIR}/bashrc ~/.bashrc
 # zsh
 #ln -s ${BASEDIR}/zshrc ~/.zshrc
 safe_link ${BASEDIR}/zshrc ~/.zshrc
