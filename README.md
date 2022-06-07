@@ -9,3 +9,12 @@ git clone --recursive https://github.com/jnovotn/dotfiles.git
 cd dotfiles
 ./setup.sh
 ```
+Then for the git / ssh setup
+```sh
+./ssh_setup.sh
+```
+
+Then gui apps
+```sh
+./install_gui_apps.sh
+```
