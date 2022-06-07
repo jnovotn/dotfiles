@@ -33,3 +33,5 @@ echo "Enter Your email: "
 read email 
 git config --global user.email "${email}"
 
+# add the git config file
+git config --global include.path ~/dotfiles/gitconfig
