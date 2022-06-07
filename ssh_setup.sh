@@ -24,3 +24,12 @@ gh auth login
 gh ssh-key add ${SSH_KEY}
 git remote rename origin old_origin
 git remote add origin git@github.com:jnovotn/dotfiles.git
+
+echo "Enter your git name: "
+read yname 
+git config --global user.name "${yname}"
+
+echo "Enter Your email: "
+read email 
+git config --global user.email "${email}"
+
