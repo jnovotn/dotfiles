@@ -14,11 +14,15 @@ fi
 }
 
 if [[ $OSTYPE == 'darwin'* ]]; then 
+    brew install vim
+    brew install curl
     brew install exa
     brew install gh
     brew install zsh
     chsh -s $(which zsh)
 else 
+    sudo apt install vim
+    sudo apt install curl
     sudo apt install zsh
     chsh -s $(which zsh)
     # exa ls 
