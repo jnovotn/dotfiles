@@ -119,19 +119,6 @@ nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>3jwf>a
 "                       - Encouragement
 "
 
-" Specify a directory for plugins 
-call plug#begin('~/.vim/plugged')
-"  " Any valid git URL is allowed for pl
-Plug 'ianding1/leetcode.vim'
-"   " Shorthand notation for plugin
-"    " Initialize plugin system
-call plug#end()
-
-let g:leetcode_browser='chrome'
-nnoremap <leader>ll :LeetCodeList<cr>
-nnoremap <leader>lt :LeetCodeTest<cr>
-nnoremap <leader>ls :LeetCodeSubmit<cr>
-nnoremap <leader>li :LeetCodeSignIn<cr>
 imap jk <Esc>
 imap jj <Esc>
-
+set number
